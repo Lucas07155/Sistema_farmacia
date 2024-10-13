@@ -16,7 +16,7 @@ if ($sql->rowCount() > 0) {
     exit;
 } else {
     echo "Usuário ou senha incorretos!";
-    echo '<a href="login.php">Tente novamente</a>';
+    echo '<a href="login.php"> Tente novamente</a>';
 }
 ?>
 

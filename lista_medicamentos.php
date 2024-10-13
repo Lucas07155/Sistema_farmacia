@@ -1,4 +1,4 @@
-<!--Desenvolvido por Lucas De Carvalho Praxedes-->
+ <!--Desenvolvido por Lucas De Carvalho Praxedes-->
   <!--DATA 13/10/2024 -->
   <!--Professor: Luís Alberto Pires de Oliveira-->
 <?php 
@@ -19,49 +19,49 @@ $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="container mt-5">
-        <h1>LISTA DE MEDICAMENTOS</h1>
-        <br>
+        <h1 class="text-center mb-4">Lista de Medicamentos</h1>
         <form method="POST" class="mb-3">
             <div class="input-group">
                 <input type="text" name="search" class="form-control" placeholder="Buscar medicamento" value="<?php echo $search; ?>">
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="submit" class="btn btn-sm btn-danger">Buscar</button>
                 </div>
             </div>
         </form>
-
-        <table class="table table-bordered">
-            <thead class="thead-light">
-                <tr>
-                    <th>ID</th>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Validade</th>
-                    <th>Categoria</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>        
-                <?php foreach($lista as $medicamento): ?>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
                     <tr>
-                        <td><?php echo $medicamento['id_produto']; ?></td>  
-                        <td><?php echo $medicamento['produto']; ?></td>
-                        <td><?php echo $medicamento['preco']; ?></td>
-                        <td><?php echo $medicamento['quantidade']; ?></td>
-                        <td><?php echo $medicamento['validade']; ?></td>
-                        <td><?php echo $medicamento['categoria']; ?></td>
-                        <td>
-                            <a href="editar_medicamento.php?id=<?php echo $medicamento['id_produto']; ?>" class=" btn btn-primary">[Editar]</a>
-                            <a href="excluir_medicamento.php?id=<?php echo $medicamento['id_produto']; ?>" class="btn btn-primary">[Excluir]</a>
-                        </td>                
-                    </tr>                
-                <?php endforeach; ?>    
-            </tbody>
-        </table>
-        
-        <br>
-        <a href="cadastrar_medicamento.php" class="btn btn-primary">Cadastrar Medicamento</a>
+                        <th>ID</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Validade</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($lista as $medicamento): ?>
+                        <tr>
+                            <td><?php echo $medicamento['id_produto']; ?></td>  
+                            <td><?php echo $medicamento['produto']; ?></td>
+                            <td><?php echo $medicamento['preco']; ?></td>
+                            <td><?php echo $medicamento['quantidade']; ?></td>
+                            <td><?php echo $medicamento['validade']; ?></td>
+                            <td><?php echo $medicamento['categoria']; ?></td>
+                            <td>
+                                <a href="editar_medicamento.php?id=<?php echo $medicamento['id_produto']; ?>" class="btn btn-sm btn-danger">Editar</a>
+                                <a href="excluir_medicamento.php?id=<?php echo $medicamento['id_produto']; ?>" class="btn btn-sm btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-right mt-3">
+            <a href="cadastrar_medicamento.php" class="btn btn-sm btn-danger">Cadastrar Novo Medicamento</a>
+        </div>
     </div>
 </body>
 </html>

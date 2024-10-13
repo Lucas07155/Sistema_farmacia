@@ -1,6 +1,7 @@
 <!--Desenvolvido por Lucas De Carvalho Praxedes-->
   <!--DATA 13/10/2024 -->
   <!--Professor: Luís Alberto Pires de Oliveira-->
+  
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +12,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>EXCLUINDO MEDICAMENTOS</h1>
+    <h1 class="text-center mb-4">EXCLUINDO MEDICAMENTOS</h1>
         <?php 
             require 'conexao.php';
             $id = $_REQUEST["id"];
@@ -26,7 +27,7 @@
                 exit;
             }
         ?><br>
-        <h2>Tem certeza que deseja excluir o medicamento abaixo?</h2>
+        <h1 class="text-center mb-4">Tem certeza que deseja excluir o medicamento abaixo?</h1>
         <form action="excluindo_medicamento.php" method="POST" >
             <input type="hidden" name="id" value="<?=$dados['id_produto']; ?>">
             <label for="produto">
@@ -35,9 +36,9 @@
             <label for="preco">
                 Preço <input type="text" class="form-control" name="preco" value="<?=$dados['preco']; ?>" readonly>
             </label>
-            <button type="submit" class="btn btn-primary">Excluir</button>
+            <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
         </form>
-        <a href="lista_medicamentos.php" class="btn btn-primary">Voltar</a>
+        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar</a>
     </div>
 </body>
 </html>

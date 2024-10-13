@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>EDITAR MEDICAMENTOS</h1>
+    <h1 class="text-center mb-4">EDITAR MEDICAMENTOS</h1>
         <?php 
             require 'conexao.php';
             $id = $_REQUEST["id"];
@@ -50,10 +50,10 @@
                 <label for="categoria">Categoria</label>
                 <input type="text" class="form-control" name="categoria" value="<?=$dados['categoria']; ?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-sm btn-danger">Salvar</button>
         </form>
         <br>
-        <a href="lista_medicamentos.php" class="btn btn-primary">Voltar</a>
+        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar</a>
     </div>
 </body>
 </html>
