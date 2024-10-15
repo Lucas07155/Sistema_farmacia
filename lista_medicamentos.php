@@ -1,6 +1,6 @@
- <!-- Desenvolvido por Lucas De Carvalho Praxedes -->
-<!-- DATA 13/10/2024 -->
-<!-- Professor: Luís Alberto Pires de Oliveira -->
+ <!--Desenvolvido por Lucas De Carvalho Praxedes-->
+  <!--DATA 13/10/2024 -->
+  <!--Professor: Luís Alberto Pires de Oliveira-->
 <?php 
 require 'conexao.php';
 $search = isset($_POST['search']) ? $_POST['search'] : '';
@@ -8,7 +8,6 @@ $sql = $pdo->prepare("SELECT * FROM medicamentos WHERE produto LIKE :search");
 $sql->bindValue(':search', '%' . $search . '%');
 $sql->execute();
 $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-$mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,19 +63,6 @@ $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
         <div class="text-right mt-3">
             <a href="cadastrar_medicamento.php" class="btn btn-sm btn-danger">Cadastrar Novo Medicamento</a>
         </div>
-
-        <div class="mt-4">
-        <h2 class="text-center mb-4">REGISTRAR VENDA DO MEDICAMENTO </h2>
-            <form action="vender_medicamento.php" method="POST">
-                <div class="input-group mb-3">
-                    <input type="text" name="id_produto" class="form-control" placeholder="ID do Produto" required>
-                    <input type="number" name="quantidade" class="form-control" placeholder="Quantidade Vendida" required min="1">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-sm btn-danger">Vender</button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
 </body>
-</html>
+</html> 

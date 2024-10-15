@@ -15,8 +15,7 @@ if ($sql->rowCount() > 0) {
     header("Location: lista_medicamentos.php");
     exit;
 } else {
-    // Redirecionar para a página de login com a mensagem de erro
-    header("Location: login.php?erro=" . urlencode("Usuário ou senha incorretos!"));
+    header("Location: login.php?erro=" . urlencode("Usuário ou senha incorretos tente novamente!"));
     exit;
 }
 ?>
