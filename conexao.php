@@ -4,6 +4,6 @@
 <?php
 $pdo = new PDO("mysql:dbname=farmacia;host=localhost;port=3307", "root", "lucas123");
 if (!$pdo) {
-    echo "Falha na conexão com o banco de dados!";
+    echo "Acesso negado!";
 } 
 ?>
