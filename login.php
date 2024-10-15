@@ -1,8 +1,7 @@
 <!--Desenvolvido por Lucas De Carvalho Praxedes-->
   <!--DATA 13/10/2024 -->
   <!--Professor: Luís Alberto Pires de Oliveira-->
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +9,15 @@
     <title>Login do adm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css"> 
-
 </head>
 <body>
     <div class="container mt-5">
-    <h1 class="text-center mb-4">ÁREA DE LOGIN</h1>
+        <h1 class="text-center mb-4">ÁREA DE LOGIN</h1>
+        
+        <?php if (isset($_GET['erro'])): ?> <!-- Exibe a mensagem de erro se existir -->
+            <div class="alert alert-danger"><?php echo $_GET['erro']; ?></div>
+        <?php endif; ?>
+
         <form action="verificar_login.php" method="POST">
             <div class="form-group">
                 <label for="usuario">Usuário</label>
@@ -28,4 +31,4 @@
         </form>
     </div>
 </body>
-</html>
+</html> 

@@ -1,11 +1,11 @@
 <!--Desenvolvido por Lucas De Carvalho Praxedes-->
   <!--DATA 13/10/2024 -->
   <!--Professor: Luís Alberto Pires de Oliveira-->
-  
-<?php
+  <?php
 require 'conexao.php';
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
+
 $sql = $pdo->prepare("SELECT * FROM administrador WHERE usuario = :usuario AND senha = :senha");
 $sql->bindValue(':usuario', $usuario);
 $sql->bindValue(':senha', $senha);
@@ -15,8 +15,9 @@ if ($sql->rowCount() > 0) {
     header("Location: lista_medicamentos.php");
     exit;
 } else {
-    echo "Usuário ou senha incorretos!";
-    echo '<a href="login.php"> Tente novamente</a>';
+    // Redirecionar para a página de login com a mensagem de erro
+    header("Location: login.php?erro=" . urlencode("Usuário ou senha incorretos!"));
+    exit;
 }
 ?>
 
