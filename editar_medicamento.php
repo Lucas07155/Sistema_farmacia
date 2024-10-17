@@ -10,7 +10,6 @@
     <title>Editar Medicamento</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css"> 
-
 </head>
 <body>
     <div class="container mt-5">
@@ -52,10 +51,10 @@
                 <label for="categoria">Categoria</label>
                 <input type="text" class="form-control" name="categoria" value="<?=$dados['categoria']; ?>" required>
             </div>
-            <button type="submit" class="btn btn-sm btn-danger">Salvar</button>
+            <button type="submit" class="btn btn-sm btn-danger">Editar medicamento</button>
         </form>
         <br>
-        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar</a>
+        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar pra lista de medicamentos</a>
     </div>
 </body>
 </html>

@@ -32,14 +32,15 @@
         <form action="excluindo_medicamento.php" method="POST" >
             <input type="hidden" name="id" value="<?=$dados['id_produto']; ?>">
             <label for="produto">
-                Produto <input type="text" class="form-control" name="produto" value="<?=$dados['produto']; ?>" readonly>
+                Produto <input type="text" class="form-control" name="produto" value="<?=$dados['produto']; ?>"readonly>
             </label>
             <label for="preco">
-                Preço <input type="text" class="form-control" name="preco" value="<?=$dados['preco']; ?>" readonly>
+                Preço <input type="text" class="form-control" name="preco" value="<?=$dados['preco']; ?>"  readonly>
             </label>
-            <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+            <button type="submit" class="btn btn-sm btn-danger">Excluir medicamento</button>
         </form>
-        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar</a>
+        <br>
+        <a href="lista_medicamentos.php" class="btn btn-sm btn-danger">Voltar pra lista de medicamentos</a>
     </div>
 </body>
 </html>
